@@ -12,9 +12,15 @@ public class ResidentialSite extends Site {
         this.s = s;
     }
 
+    public double getBaseAmount(){
+        return units * rate;
+    }
+    public double getTaxAmount(){
+        return getBaseAmount() * s.TAX_RATE;
+    }
+
+
     public double getBillableAmount() {
-        double base = units * rate;
-        double tax = base * super.TAX_RATE;
-        return base + tax;
+        return getBaseAmount() + getTaxAmount();
     }
 }
