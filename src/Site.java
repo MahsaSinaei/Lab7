@@ -1,5 +1,4 @@
 public abstract class Site {
-    double TAX_RATE = 10;
 
     public abstract double getTaxAmount();
 

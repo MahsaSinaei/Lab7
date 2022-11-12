@@ -1,8 +1,10 @@
 public class LifelineSite extends Site {
     private double units;
     private double rate;
+    private double TAX_RATE;
 
-    public LifelineSite(double units, double rate) {
+    public LifelineSite(double TAX_RATE,double units, double rate) {
+        this.TAX_RATE = TAX_RATE;
         this.units = units;
         this.rate = rate;
     }
@@ -13,7 +15,7 @@ public class LifelineSite extends Site {
     }
     @Override
     public double getTaxAmount(){
-        return getBaseAmount() * super.TAX_RATE * 0.2;
+        return getBaseAmount() * TAX_RATE * 0.2;
     }
 
 
