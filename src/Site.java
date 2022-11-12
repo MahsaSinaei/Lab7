@@ -1,13 +1,11 @@
-public class Site {
+public abstract class Site {
+    double TAX_RATE = 10;
 
-    double TAX_RATE;
+    public abstract double getTaxAmount();
 
-    public Site(double TAX_RATE) {
-        this.TAX_RATE = TAX_RATE;
+    public abstract double getBaseAmount();
+
+    public double getBillableAmount() {
+        return getBaseAmount() + getTaxAmount();
     }
-
-    public Site() {
-    }
-
-
 }

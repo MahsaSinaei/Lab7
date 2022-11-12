@@ -2,25 +2,20 @@ public class ResidentialSite extends Site {
 
     private double units;
     private double rate;
-    private final Site s;
 
 
-    public ResidentialSite(Site s, double units, double rate) {
-        super();
+    public ResidentialSite(double units, double rate) {
         this.units = units;
         this.rate = rate;
-        this.s = s;
     }
 
+    @Override
     public double getBaseAmount(){
         return units * rate;
     }
+    @Override
     public double getTaxAmount(){
-        return getBaseAmount() * s.TAX_RATE;
+        return getBaseAmount() * super.TAX_RATE;
     }
 
-
-    public double getBillableAmount() {
-        return getBaseAmount() + getTaxAmount();
-    }
 }
